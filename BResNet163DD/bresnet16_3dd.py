@@ -51,14 +51,14 @@ class BResNet163DD(tf.keras.Model):
 
         # Stem
         self.stem = Conv3DLayer(filters=32, kernel_size=(3, 3, 3), strides=(2, 2, 2), 
-                                     padding="same", use_bias=False, 
-                                     normalization="batch_norm", activation="relu")
+                                padding="same", use_bias=False, 
+                                normalization="batch_norm", activation="relu")
         self.stem1 = Conv3DLayer(filters=32, kernel_size=(3, 3, 3), strides=(1, 1, 1), 
-                                      padding="same", use_bias=False, 
-                                      normalization="batch_norm", activation="relu")
+                                 padding="same", use_bias=False, 
+                                 normalization="batch_norm", activation="relu")
         self.stem2 = Conv3DLayer(filters=64, kernel_size=(3, 3, 3), strides=(1, 1, 1), 
-                                      padding="same", use_bias=False, 
-                                      normalization="batch_norm", activation="relu")
+                                 padding="same", use_bias=False, 
+                                 normalization="batch_norm", activation="relu")
         self.stem3 = tf.keras.layers.MaxPool3D(pool_size=(2, 2, 2), strides=(2, 2, 2), padding="same")
 
         # Backbone
